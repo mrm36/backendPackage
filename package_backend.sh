@@ -1,6 +1,6 @@
 echo "Packaging Bundle..."
 
-packageNum=`php /home/matt/git/rabbitmqphp_example_deployTest/testRabbitMQClient.php nextPackage backendPackage.tar.gzi | xargs`
+packageNum=`php /home/matt/git/rabbitmqphp_example_deployTest/testRabbitMQClient.php nextPackage backendPackage-v | xargs`
 	cd /home/matt/Scripts/temp/
 	echo "MySQL Password?"
 		mkdir mySqlData
@@ -24,4 +24,6 @@ packageNum=`php /home/matt/git/rabbitmqphp_example_deployTest/testRabbitMQClient
 	
 	cp backendPackage-v"$packageNum".tar.gz ../backendPackage/
 	rm /home/matt/Scripts/temp/backendPackage-v"$packageNum".tar.gz
-	php /home/matt/git/rabbitmqphp_example_deployTest/testRabbitMQClient.php updateVerion "$packageNum"
+	php /home/matt/git/rabbitmqphp_example_deployTest/updateRabbitMQClient.php updateVersion backendPackage-v"$packageNum".tar.gz "$packageNum"
+
+	
