@@ -20,7 +20,7 @@ packageNum=`php /home/matt/git/rabbitmqphp_example_deployTest/testRabbitMQClient
 	
 	# Scp package to the deploy server
 	echo "Sending to deploy server..."
-	scp -r /home/matt/Scripts/temp/backendPackage-v"$packageNum".tar.gz uzair@192.168.2.30:/home/uzair/Packages/backend
+	scp -r /home/matt/Scripts/temp/backendPackage-v"$packageNum".tar.gz uzair@192.168.2.30:/home/uzair/Packages/
 	
 	cp backendPackage-v"$packageNum".tar.gz ../backendPackage/
 	rm /home/matt/Scripts/temp/backendPackage-v"$packageNum".tar.gz
